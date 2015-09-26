@@ -854,7 +854,7 @@ static int test_for_adc_direct(struct snd_soc_component *component)
 		/* DAC is from DAP */
 		if (!((sss >> 6) & 3))
 			return 1;	/* DAP source is ADC */
-		dap = snd_soc_component_read32(component, SGTL5000_DAP_CTRL);
+		dap = snd_soc_component_read(component, SGTL5000_DAP_CTRL);
 		if  ((dap & SGTL5000_DAP_MIX_EN) && !((sss >> 8) & 3))
 			return 1;	/* DAP mixer source is ADC */
 	}

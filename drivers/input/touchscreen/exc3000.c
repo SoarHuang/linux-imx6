@@ -325,6 +325,14 @@ static int exc3000_probe(struct i2c_client *client)
 		data->info = &exc3000_info[eeti_dev_id];
 	}
 	timer_setup(&data->timer, exc3000_timer, 0);
+
+	/* probe for device */
+	error = i2c_master_send(client, NULL, 0);
+	if (error < 0) {
+		dev_err(&client->dev, "no device\n");
+		return -ENODEV;
+	}
+
 	init_completion(&data->wait_event);
 	mutex_init(&data->query_lock);
 

@@ -12,11 +12,9 @@
 				broken-wake-request-signals;
 			};
 		};
-
-		aips4: bus@32c00000 {
-			irqsteer_hdmi: irqsteer@32fc2000 {
-				/delete-property/ interrupt-parent;
-			};
-		};
 	};
+};
+
+&irqsteer_hdmi {
+	/delete-property/ interrupt-parent;
 };

@@ -321,7 +321,7 @@ static int vag_and_mute_control(struct snd_soc_component *component,
 		/*
 		 * Keep VAG powered if Line In is selected (codec bypass mode)
 		 */
-		if (snd_soc_component_read32(component, SGTL5000_CHIP_ANA_CTRL) &
+		if (snd_soc_component_read(component, SGTL5000_CHIP_ANA_CTRL) &
 				SGTL5000_HP_SEL_MASK)
 			break;
 		sgtl5000->mute_state[event_source] =

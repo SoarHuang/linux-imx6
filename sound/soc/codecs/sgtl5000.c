@@ -416,7 +416,7 @@ static int sgtl5000_hp_select(struct snd_kcontrol *kcontrol,
 	if (ucontrol->value.enumerated.item[0])
 		val = SGTL5000_VAG_POWERUP;
 
-	if (val || !(snd_soc_component_read32(component, SGTL5000_CHIP_ANA_POWER)
+	if (val || !(snd_soc_component_read(component, SGTL5000_CHIP_ANA_POWER)
 			& mask)) {
 		snd_soc_component_update_bits(component, SGTL5000_CHIP_ANA_POWER,
 				SGTL5000_VAG_POWERUP, val);

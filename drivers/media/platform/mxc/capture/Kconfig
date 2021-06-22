@@ -74,7 +74,7 @@ config MXC_HDMI_CSI2_TC358743
 	depends on !VIDEO_MXC_EMMA_CAMERA && I2C
 	select MXC_MIPI_CSI2 if ARCH_MX6Q
 	select MXC_CAMERA_SENSOR_CLK
-	---help---
+	help
 	  Toshina HDMI to MIPI-CSI2 bridge
 
 config TC358743_AUDIO

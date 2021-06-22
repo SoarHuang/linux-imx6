@@ -80,7 +80,7 @@ config MXC_HDMI_CSI2_TC358743
 config TC358743_AUDIO
 	bool "Audio support for Toshiba tc358743"
 	depends on MXC_HDMI_CSI2_TC358743
-	---help---
+	help
 	  Enables audio support from HDMI input
 
 config MXC_HDMI_CSI2_TC358743_V2

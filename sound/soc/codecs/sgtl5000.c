@@ -847,7 +847,7 @@ static int test_for_adc_direct(struct snd_soc_component *component)
 	int sss;
 	int dap;
 
-	sss = snd_soc_component_read32(component, SGTL5000_CHIP_SSS_CTRL);
+	sss = snd_soc_component_read(component, SGTL5000_CHIP_SSS_CTRL);
 	if (!((sss >> 4) & 3))
 		return 1;	/* DAC is from ADC, powerup vag */
 	if (((sss >> 4) & 3) == 3) {
